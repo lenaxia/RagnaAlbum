@@ -1,0 +1,27 @@
+# AI Commands — caller for lenaxia/ai-workflows.
+#
+# Delegates the AI Commands AI flow to the central reusable workflow, which owns
+# prompt assembly, the opencode run, and the once-per-thread command footer.
+#
+# Pinned to ai-workflows v0.2.10 — bump by editing the tag below (or via propagate.yml).
+# Requires OPENAI_API_KEY / OPENAI_API_BASE secrets + OPENAI_MODEL variable (inherited).
+
+name: AI Commands
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  id-token: write
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  command::
+    uses: lenaxia/ai-workflows/.github/workflows/ai-comment.yml@v0.2.10
+    secrets: inherit
+    with:
+      version: v0.2.10
+      project_name: RagnaAlbum

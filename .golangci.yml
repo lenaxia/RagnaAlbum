@@ -1,0 +1,16 @@
+version: "2"
+linters:
+  settings:
+    depguard:
+      rules:
+        album-no-sources:
+          files: ["**/album/**"]
+          deny:
+            - pkg: github.com/lenaxia/ragnaDataSDK
+              desc: "the album package is data-only; sources are build-time (cmd/albumbuild) per ADR-001"
+            - pkg: github.com/lenaxia/iroWikiScraper
+              desc: "the album package is data-only; sources are build-time (cmd/albumbuild) per ADR-001"
+        no-consumers:
+          deny:
+            - pkg: github.com/lenaxia/goKore
+              desc: "consumers import the album; never the reverse (ADR-001)"
