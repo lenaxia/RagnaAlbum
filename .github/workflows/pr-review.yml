@@ -20,8 +20,8 @@ permissions:
 
 jobs:
   respond::
-    uses: lenaxia/ai-workflows/.github/workflows/pr-review.yml@v0.2.10
+    uses: lenaxia/ai-workflows/.github/workflows/pr-review.yml@v0.2.22
     secrets: inherit
     with:
-      version: v0.2.10
+      version: v0.2.22
       project_name: RagnaAlbum
