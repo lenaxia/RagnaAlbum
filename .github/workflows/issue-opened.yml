@@ -20,8 +20,8 @@ permissions:
 
 jobs:
   respond::
-    uses: lenaxia/ai-workflows/.github/workflows/issue-opened.yml@v0.2.10
+    uses: lenaxia/ai-workflows/.github/workflows/issue-opened.yml@v0.2.21
     secrets: inherit
     with:
-      version: v0.2.10
+      version: v0.2.21
       project_name: RagnaAlbum
